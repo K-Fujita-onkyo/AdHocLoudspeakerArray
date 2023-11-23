@@ -11,6 +11,9 @@
 		BFB112512B0F554300A301AC /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFB112502B0F554300A301AC /* ContentView.swift */; };
 		BFB112532B0F554600A301AC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BFB112522B0F554600A301AC /* Assets.xcassets */; };
 		BFB112562B0F554600A301AC /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BFB112552B0F554600A301AC /* Preview Assets.xcassets */; };
+		BFB1125E2B0F558A00A301AC /* AdHocModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFB1125D2B0F558A00A301AC /* AdHocModel.swift */; };
+		BFB112602B0F63CD00A301AC /* SoundOperatorModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFB1125F2B0F63CD00A301AC /* SoundOperatorModel.swift */; };
+		BFB112622B0F64FE00A301AC /* LoudspeakerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFB112612B0F64FE00A301AC /* LoudspeakerModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +22,9 @@
 		BFB112502B0F554300A301AC /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		BFB112522B0F554600A301AC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BFB112552B0F554600A301AC /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		BFB1125D2B0F558A00A301AC /* AdHocModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdHocModel.swift; sourceTree = "<group>"; };
+		BFB1125F2B0F63CD00A301AC /* SoundOperatorModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundOperatorModel.swift; sourceTree = "<group>"; };
+		BFB112612B0F64FE00A301AC /* LoudspeakerModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoudspeakerModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,6 +57,7 @@
 		BFB1124D2B0F554300A301AC /* AdHocLoudspeakerArray */ = {
 			isa = PBXGroup;
 			children = (
+				BFB1125C2B0F556800A301AC /* Model */,
 				BFB1124E2B0F554300A301AC /* AdHocLoudspeakerArrayApp.swift */,
 				BFB112502B0F554300A301AC /* ContentView.swift */,
 				BFB112522B0F554600A301AC /* Assets.xcassets */,
@@ -65,6 +72,16 @@
 				BFB112552B0F554600A301AC /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		BFB1125C2B0F556800A301AC /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				BFB1125D2B0F558A00A301AC /* AdHocModel.swift */,
+				BFB1125F2B0F63CD00A301AC /* SoundOperatorModel.swift */,
+				BFB112612B0F64FE00A301AC /* LoudspeakerModel.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -138,7 +155,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				BFB112512B0F554300A301AC /* ContentView.swift in Sources */,
+				BFB112602B0F63CD00A301AC /* SoundOperatorModel.swift in Sources */,
+				BFB112622B0F64FE00A301AC /* LoudspeakerModel.swift in Sources */,
 				BFB1124F2B0F554300A301AC /* AdHocLoudspeakerArrayApp.swift in Sources */,
+				BFB1125E2B0F558A00A301AC /* AdHocModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

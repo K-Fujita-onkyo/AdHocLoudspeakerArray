@@ -25,6 +25,7 @@
 		BFB1125D2B0F558A00A301AC /* AdHocModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdHocModel.swift; sourceTree = "<group>"; };
 		BFB1125F2B0F63CD00A301AC /* SoundOperatorModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundOperatorModel.swift; sourceTree = "<group>"; };
 		BFB112612B0F64FE00A301AC /* LoudspeakerModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoudspeakerModel.swift; sourceTree = "<group>"; };
+		BFB112632B105DB800A301AC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,6 +58,7 @@
 		BFB1124D2B0F554300A301AC /* AdHocLoudspeakerArray */ = {
 			isa = PBXGroup;
 			children = (
+				BFB112632B105DB800A301AC /* Info.plist */,
 				BFB1125C2B0F556800A301AC /* Model */,
 				BFB1124E2B0F554300A301AC /* AdHocLoudspeakerArrayApp.swift */,
 				BFB112502B0F554300A301AC /* ContentView.swift */,
@@ -295,6 +297,7 @@
 				DEVELOPMENT_TEAM = PQFYQAUU88;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = AdHocLoudspeakerArray/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -324,6 +327,7 @@
 				DEVELOPMENT_TEAM = PQFYQAUU88;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = AdHocLoudspeakerArray/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;

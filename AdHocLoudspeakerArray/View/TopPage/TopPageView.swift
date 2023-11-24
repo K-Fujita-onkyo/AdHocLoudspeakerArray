@@ -1,13 +1,18 @@
-//
-//  ContentView.swift
-//  AdHocLoudspeakerArray
-//
-//  Created by 藤田一旗 on 2023/11/23.
-//
+///
+///
+///Project name: AdHocLoudspeakerArray
+/// Class name: TopPageView
+/// Creator: Kazuki Fujita
+/// Update: 2023/11/24 (Fri)
+///
+/// ---Explanation---
+///
+///
+///
 
 import SwiftUI
 
-struct ContentView: View {
+struct TopPageView: View {
     var body: some View {
         VStack {
             Image(systemName: "globe")
@@ -20,5 +25,5 @@ struct ContentView: View {
 }
 
 #Preview {
-    ContentView()
+    TopPageView()
 }

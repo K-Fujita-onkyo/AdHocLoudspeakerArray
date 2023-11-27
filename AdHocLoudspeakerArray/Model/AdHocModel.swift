@@ -22,11 +22,12 @@ class AdHocModel: NSObject,
     // MARK: - Instances
     
     // MARK: Nearby Interaction
-    private var niSession: NISession!
-    private var myDiscoveryTokenData: Data!
+    var niSession: NISession!
+    var myDiscoveryToken: NIDiscoveryToken!
+    var myDiscoveryTokenData: Data!
     
     // MARK: Multipeer Connectivity
-    let mcServiceType: String = "ad-hoc-uwb"
+    final let mcServiceType: String = "ad-hoc-uwb"
     var mcSession: MCSession!
     var mcNearbyServiceBrowser : MCNearbyServiceBrowser!
     var mcNearbyServiceAdvertiser: MCNearbyServiceAdvertiser!
@@ -36,6 +37,8 @@ class AdHocModel: NSObject,
     // MARK: - Initializing Method
     override init() {
         super.init()
+        self.setupNearbyInteraction()
+        self.setupMultipeerConnectivity()
     }
     
     // MARK: Nearby Interaction Methods
@@ -50,8 +53,22 @@ class AdHocModel: NSObject,
             return
         }
         
+        self.myDiscoveryToken = token
+        
         // Convert my discovery token to Data type
         self.myDiscoveryTokenData = try! NSKeyedArchiver.archivedData(withRootObject: token, requiringSecureCoding: true)
+    }
+    
+    func startNISession(niDiscoveryTokenData: Data)->NIDiscoveryToken!{
+        guard let niDiscoveryToken = try? NSKeyedUnarchiver.unarchivedObject(ofClass: NIDiscoveryToken.self, from: niDiscoveryTokenData)
+        else {
+            return nil
+        }
+        
+        let config = NINearbyPeerConfiguration(peerToken: niDiscoveryToken)
+        self.niSession?.run(config)
+        
+        return niDiscoveryToken
     }
     
     // MARK: Multipeer Connectivity Methods
@@ -68,6 +85,7 @@ class AdHocModel: NSObject,
         self.mcNearbyServiceAdvertiser.delegate = self
         // Start advertising
         self.mcNearbyServiceAdvertiser.startAdvertisingPeer()
+        print("Test Hosting")
     }
     
     func stopHosting() {
@@ -79,18 +97,64 @@ class AdHocModel: NSObject,
         self.mcNearbyServiceBrowser = MCNearbyServiceBrowser(peer: self.mcPeerID, serviceType: self.mcServiceType)
         self.mcNearbyServiceBrowser.delegate = self
         self.mcNearbyServiceBrowser.startBrowsingForPeers()
+        print("Test Browsing")
     }
     
     func stopBrowsing() {
         self.mcNearbyServiceBrowser.stopBrowsingForPeers()
     }
     
+    func convertInstanceToData<T: Codable>(instance: T)->Data!{
+        let encoder: JSONEncoder = JSONEncoder()
+        var data: Data!
+        
+        do{
+            data = try encoder.encode(instance)
+        } catch{
+            print("Debug: can't convert the instance to Data type.")
+        }
+        
+        return data
+    }
+    
+    func convertDataToInstance<T: Codable>(type: T.Type, data: Data)->T!{
+        let decoder: JSONDecoder = JSONDecoder()
+        var instance: T!
+        
+        do{
+            instance = try decoder.decode(type, from: data)
+        } catch{
+            print("Debug: can't convert the instance to Data type.")
+        }
+        
+        return instance
+    }
+    
+    func sendData(data: Data, mcPeerID: MCPeerID){
+        do{
+            try self.mcSession.send(data,
+                                            toPeers: [mcPeerID],
+                                            with: .reliable)
+            }catch let error as NSError {
+                        print(error.localizedDescription)
+            }
+    }
+    
+    func sendData(data: Data, mcPeerIDs: [MCPeerID]){
+        do{
+            try self.mcSession.send(data,
+                                            toPeers: mcPeerIDs,
+                                            with: .reliable)
+            }catch let error as NSError {
+                        print(error.localizedDescription)
+            }
+    }
     
     // MARK: - NISessionDelegate Methods
     
     // Session to to detect movement of other devices
     // Notifies me when the session updates nearby objects.
-    func session(_ session: NISession, didUpdate nearbyObjects: [NINearbyObject]) {
+    open func session(_ session: NISession, didUpdate nearbyObjects: [NINearbyObject]) {
     }
     
     // MARK: - MCSessionDelegate Methods
@@ -98,27 +162,27 @@ class AdHocModel: NSObject,
     // Session to change my state
     // Called when the state of a nearby peer changes.
     // State: connected, notConnected, and connecting
-    func session(_ session: MCSession, peer peerID: MCPeerID, didChange state: MCSessionState) {
+    open func session(_ session: MCSession, peer peerID: MCPeerID, didChange state: MCSessionState) {
     }
     
     // Session to get data
     // Indicates that an NSData object has been received from a nearby peer.
-    func session(_ session: MCSession, didReceive data: Data, fromPeer peerID: MCPeerID) {
+    open func session(_ session: MCSession, didReceive data: Data, fromPeer peerID: MCPeerID) {
     }
     
     // Sesion to start getting data
     // Indicates that the local peer began receiving a resource from a nearby peer.
-    func session(_ session: MCSession, didReceive stream: InputStream, withName streamName: String, fromPeer peerID: MCPeerID) {
+    open func session(_ session: MCSession, didReceive stream: InputStream, withName streamName: String, fromPeer peerID: MCPeerID) {
     }
     
     // Session to finish getting data
     // Indicates that the local peer finished receiving a resource from a nearby peer.
-    func session(_ session: MCSession, didStartReceivingResourceWithName resourceName: String, fromPeer peerID: MCPeerID, with progress: Progress) {
+    open func session(_ session: MCSession, didStartReceivingResourceWithName resourceName: String, fromPeer peerID: MCPeerID, with progress: Progress) {
     }
     
     // Session to check a client certificate
     // Called to validate the client certificate provided by a peer when the connection is first established.
-    func session(_ session: MCSession, didFinishReceivingResourceWithName resourceName: String, fromPeer peerID: MCPeerID, at localURL: URL?, withError error: Error?) {
+    open func session(_ session: MCSession, didFinishReceivingResourceWithName resourceName: String, fromPeer peerID: MCPeerID, at localURL: URL?, withError error: Error?) {
     }
     
     // MARK: -  MCNearbyServiceAdvertiserDelegate Methods

@@ -8,24 +8,42 @@
 
 /* Begin PBXBuildFile section */
 		BFB1124F2B0F554300A301AC /* AdHocLoudspeakerArrayApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFB1124E2B0F554300A301AC /* AdHocLoudspeakerArrayApp.swift */; };
-		BFB112512B0F554300A301AC /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFB112502B0F554300A301AC /* ContentView.swift */; };
+		BFB112512B0F554300A301AC /* TopPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFB112502B0F554300A301AC /* TopPageView.swift */; };
 		BFB112532B0F554600A301AC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BFB112522B0F554600A301AC /* Assets.xcassets */; };
 		BFB112562B0F554600A301AC /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BFB112552B0F554600A301AC /* Preview Assets.xcassets */; };
 		BFB1125E2B0F558A00A301AC /* AdHocModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFB1125D2B0F558A00A301AC /* AdHocModel.swift */; };
 		BFB112602B0F63CD00A301AC /* SoundOperatorModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFB1125F2B0F63CD00A301AC /* SoundOperatorModel.swift */; };
 		BFB112622B0F64FE00A301AC /* LoudspeakerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFB112612B0F64FE00A301AC /* LoudspeakerModel.swift */; };
+		BFB112682B10700600A301AC /* RoundedCornersButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFB112672B10700600A301AC /* RoundedCornersButtonStyle.swift */; };
+		BFB1126C2B10716F00A301AC /* PositionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFB1126B2B10716F00A301AC /* PositionView.swift */; };
+		BFB1126E2B1071AD00A301AC /* Position.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFB1126D2B1071AD00A301AC /* Position.swift */; };
+		BFB112722B10725800A301AC /* SoundOperatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFB112712B10725800A301AC /* SoundOperatorView.swift */; };
+		BFB112752B108DDE00A301AC /* LoudspeakerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFB112742B108DDE00A301AC /* LoudspeakerView.swift */; };
+		BFB112782B10AFA200A301AC /* LoudspeakerInfoMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFB112772B10AFA200A301AC /* LoudspeakerInfoMessage.swift */; };
+		BFB1127A2B10AFBA00A301AC /* SoundInfoMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFB112792B10AFBA00A301AC /* SoundInfoMessage.swift */; };
+		BFB112802B10B71F00A301AC /* LoudspeakerInfoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFB1127F2B10B71F00A301AC /* LoudspeakerInfoModel.swift */; };
+		BFB112882B10D84100A301AC /* LoudspeakerInformationsDictionary{.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFB112872B10D84100A301AC /* LoudspeakerInformationsDictionary{.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		BFB1124B2B0F554300A301AC /* AdHocLoudspeakerArray.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AdHocLoudspeakerArray.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BFB1124E2B0F554300A301AC /* AdHocLoudspeakerArrayApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdHocLoudspeakerArrayApp.swift; sourceTree = "<group>"; };
-		BFB112502B0F554300A301AC /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		BFB112502B0F554300A301AC /* TopPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopPageView.swift; sourceTree = "<group>"; };
 		BFB112522B0F554600A301AC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BFB112552B0F554600A301AC /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		BFB1125D2B0F558A00A301AC /* AdHocModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdHocModel.swift; sourceTree = "<group>"; };
 		BFB1125F2B0F63CD00A301AC /* SoundOperatorModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundOperatorModel.swift; sourceTree = "<group>"; };
 		BFB112612B0F64FE00A301AC /* LoudspeakerModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoudspeakerModel.swift; sourceTree = "<group>"; };
 		BFB112632B105DB800A301AC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		BFB112672B10700600A301AC /* RoundedCornersButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedCornersButtonStyle.swift; sourceTree = "<group>"; };
+		BFB1126B2B10716F00A301AC /* PositionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PositionView.swift; sourceTree = "<group>"; };
+		BFB1126D2B1071AD00A301AC /* Position.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Position.swift; sourceTree = "<group>"; };
+		BFB112712B10725800A301AC /* SoundOperatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundOperatorView.swift; sourceTree = "<group>"; };
+		BFB112742B108DDE00A301AC /* LoudspeakerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoudspeakerView.swift; sourceTree = "<group>"; };
+		BFB112772B10AFA200A301AC /* LoudspeakerInfoMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoudspeakerInfoMessage.swift; sourceTree = "<group>"; };
+		BFB112792B10AFBA00A301AC /* SoundInfoMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundInfoMessage.swift; sourceTree = "<group>"; };
+		BFB1127F2B10B71F00A301AC /* LoudspeakerInfoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoudspeakerInfoModel.swift; sourceTree = "<group>"; };
+		BFB112872B10D84100A301AC /* LoudspeakerInformationsDictionary{.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LoudspeakerInformationsDictionary{.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,9 +77,9 @@
 			isa = PBXGroup;
 			children = (
 				BFB112632B105DB800A301AC /* Info.plist */,
+				BFB112652B106E6D00A301AC /* View */,
 				BFB1125C2B0F556800A301AC /* Model */,
 				BFB1124E2B0F554300A301AC /* AdHocLoudspeakerArrayApp.swift */,
-				BFB112502B0F554300A301AC /* ContentView.swift */,
 				BFB112522B0F554600A301AC /* Assets.xcassets */,
 				BFB112542B0F554600A301AC /* Preview Content */,
 			);
@@ -79,11 +97,100 @@
 		BFB1125C2B0F556800A301AC /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				BFB112832B10D1FC00A301AC /* SoundOperator */,
+				BFB112822B10D1EE00A301AC /* Loudspeaker */,
+				BFB112762B10AF6A00A301AC /* Structure */,
 				BFB1125D2B0F558A00A301AC /* AdHocModel.swift */,
-				BFB1125F2B0F63CD00A301AC /* SoundOperatorModel.swift */,
-				BFB112612B0F64FE00A301AC /* LoudspeakerModel.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		BFB112652B106E6D00A301AC /* View */ = {
+			isa = PBXGroup;
+			children = (
+				BFB112732B108DBF00A301AC /* Loudspeaker */,
+				BFB112702B10724100A301AC /* SoundOperator */,
+				BFB112692B1070F500A301AC /* TopPage */,
+				BFB112662B106FCA00A301AC /* Style */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		BFB112662B106FCA00A301AC /* Style */ = {
+			isa = PBXGroup;
+			children = (
+				BFB112672B10700600A301AC /* RoundedCornersButtonStyle.swift */,
+			);
+			path = Style;
+			sourceTree = "<group>";
+		};
+		BFB112692B1070F500A301AC /* TopPage */ = {
+			isa = PBXGroup;
+			children = (
+				BFB112502B0F554300A301AC /* TopPageView.swift */,
+				BFB1126A2B10714400A301AC /* SubView */,
+			);
+			path = TopPage;
+			sourceTree = "<group>";
+		};
+		BFB1126A2B10714400A301AC /* SubView */ = {
+			isa = PBXGroup;
+			children = (
+				BFB1126B2B10716F00A301AC /* PositionView.swift */,
+				BFB1126D2B1071AD00A301AC /* Position.swift */,
+			);
+			path = SubView;
+			sourceTree = "<group>";
+		};
+		BFB112702B10724100A301AC /* SoundOperator */ = {
+			isa = PBXGroup;
+			children = (
+				BFB112712B10725800A301AC /* SoundOperatorView.swift */,
+			);
+			path = SoundOperator;
+			sourceTree = "<group>";
+		};
+		BFB112732B108DBF00A301AC /* Loudspeaker */ = {
+			isa = PBXGroup;
+			children = (
+				BFB112742B108DDE00A301AC /* LoudspeakerView.swift */,
+			);
+			path = Loudspeaker;
+			sourceTree = "<group>";
+		};
+		BFB112762B10AF6A00A301AC /* Structure */ = {
+			isa = PBXGroup;
+			children = (
+				BFB112772B10AFA200A301AC /* LoudspeakerInfoMessage.swift */,
+				BFB112792B10AFBA00A301AC /* SoundInfoMessage.swift */,
+			);
+			path = Structure;
+			sourceTree = "<group>";
+		};
+		BFB1127E2B10B6E600A301AC /* LoudspeakerInfo */ = {
+			isa = PBXGroup;
+			children = (
+				BFB1127F2B10B71F00A301AC /* LoudspeakerInfoModel.swift */,
+				BFB112872B10D84100A301AC /* LoudspeakerInformationsDictionary{.swift */,
+			);
+			path = LoudspeakerInfo;
+			sourceTree = "<group>";
+		};
+		BFB112822B10D1EE00A301AC /* Loudspeaker */ = {
+			isa = PBXGroup;
+			children = (
+				BFB112612B0F64FE00A301AC /* LoudspeakerModel.swift */,
+			);
+			path = Loudspeaker;
+			sourceTree = "<group>";
+		};
+		BFB112832B10D1FC00A301AC /* SoundOperator */ = {
+			isa = PBXGroup;
+			children = (
+				BFB1125F2B0F63CD00A301AC /* SoundOperatorModel.swift */,
+				BFB1127E2B10B6E600A301AC /* LoudspeakerInfo */,
+			);
+			path = SoundOperator;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -156,11 +263,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BFB112512B0F554300A301AC /* ContentView.swift in Sources */,
+				BFB112682B10700600A301AC /* RoundedCornersButtonStyle.swift in Sources */,
+				BFB112882B10D84100A301AC /* LoudspeakerInformationsDictionary{.swift in Sources */,
+				BFB112512B0F554300A301AC /* TopPageView.swift in Sources */,
+				BFB112752B108DDE00A301AC /* LoudspeakerView.swift in Sources */,
+				BFB1127A2B10AFBA00A301AC /* SoundInfoMessage.swift in Sources */,
+				BFB112722B10725800A301AC /* SoundOperatorView.swift in Sources */,
 				BFB112602B0F63CD00A301AC /* SoundOperatorModel.swift in Sources */,
 				BFB112622B0F64FE00A301AC /* LoudspeakerModel.swift in Sources */,
 				BFB1124F2B0F554300A301AC /* AdHocLoudspeakerArrayApp.swift in Sources */,
+				BFB112782B10AFA200A301AC /* LoudspeakerInfoMessage.swift in Sources */,
 				BFB1125E2B0F558A00A301AC /* AdHocModel.swift in Sources */,
+				BFB1126E2B1071AD00A301AC /* Position.swift in Sources */,
+				BFB112802B10B71F00A301AC /* LoudspeakerInfoModel.swift in Sources */,
+				BFB1126C2B10716F00A301AC /* PositionView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

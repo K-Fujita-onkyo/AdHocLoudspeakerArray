@@ -85,7 +85,6 @@ class AdHocModel: NSObject,
         self.mcNearbyServiceAdvertiser.delegate = self
         // Start advertising
         self.mcNearbyServiceAdvertiser.startAdvertisingPeer()
-        print("Test Hosting")
     }
     
     func stopHosting() {
@@ -97,7 +96,6 @@ class AdHocModel: NSObject,
         self.mcNearbyServiceBrowser = MCNearbyServiceBrowser(peer: self.mcPeerID, serviceType: self.mcServiceType)
         self.mcNearbyServiceBrowser.delegate = self
         self.mcNearbyServiceBrowser.startBrowsingForPeers()
-        print("Test Browsing")
     }
     
     func stopBrowsing() {

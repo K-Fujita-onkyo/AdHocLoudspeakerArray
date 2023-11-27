@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BF8EFDB32B14601B00623870 /* ConvexHullInfoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF8EFDB22B14601B00623870 /* ConvexHullInfoModel.swift */; };
+		BF8EFDB62B14624C00623870 /* StackModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF8EFDB52B14624C00623870 /* StackModel.swift */; };
 		BFB1124F2B0F554300A301AC /* AdHocLoudspeakerArrayApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFB1124E2B0F554300A301AC /* AdHocLoudspeakerArrayApp.swift */; };
 		BFB112512B0F554300A301AC /* TopPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFB112502B0F554300A301AC /* TopPageView.swift */; };
 		BFB112532B0F554600A301AC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BFB112522B0F554600A301AC /* Assets.xcassets */; };
@@ -26,6 +28,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		BF8EFDB22B14601B00623870 /* ConvexHullInfoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConvexHullInfoModel.swift; sourceTree = "<group>"; };
+		BF8EFDB52B14624C00623870 /* StackModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StackModel.swift; sourceTree = "<group>"; };
 		BFB1124B2B0F554300A301AC /* AdHocLoudspeakerArray.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AdHocLoudspeakerArray.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BFB1124E2B0F554300A301AC /* AdHocLoudspeakerArrayApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdHocLoudspeakerArrayApp.swift; sourceTree = "<group>"; };
 		BFB112502B0F554300A301AC /* TopPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopPageView.swift; sourceTree = "<group>"; };
@@ -57,6 +61,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		BF8EFDB12B145FC400623870 /* ConvexHull */ = {
+			isa = PBXGroup;
+			children = (
+				BF8EFDB22B14601B00623870 /* ConvexHullInfoModel.swift */,
+			);
+			path = ConvexHull;
+			sourceTree = "<group>";
+		};
+		BF8EFDB42B14622B00623870 /* Algorithm */ = {
+			isa = PBXGroup;
+			children = (
+				BF8EFDB52B14624C00623870 /* StackModel.swift */,
+			);
+			path = Algorithm;
+			sourceTree = "<group>";
+		};
 		BFB112422B0F554300A301AC = {
 			isa = PBXGroup;
 			children = (
@@ -97,6 +117,8 @@
 		BFB1125C2B0F556800A301AC /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				BF8EFDB42B14622B00623870 /* Algorithm */,
+				BF8EFDB12B145FC400623870 /* ConvexHull */,
 				BFB112832B10D1FC00A301AC /* SoundOperator */,
 				BFB112822B10D1EE00A301AC /* Loudspeaker */,
 				BFB112762B10AF6A00A301AC /* Structure */,
@@ -265,6 +287,7 @@
 			files = (
 				BFB112682B10700600A301AC /* RoundedCornersButtonStyle.swift in Sources */,
 				BFB112882B10D84100A301AC /* LoudspeakerInformationsDictionary{.swift in Sources */,
+				BF8EFDB62B14624C00623870 /* StackModel.swift in Sources */,
 				BFB112512B0F554300A301AC /* TopPageView.swift in Sources */,
 				BFB112752B108DDE00A301AC /* LoudspeakerView.swift in Sources */,
 				BFB1127A2B10AFBA00A301AC /* SoundInfoMessage.swift in Sources */,
@@ -275,6 +298,7 @@
 				BFB112782B10AFA200A301AC /* LoudspeakerInfoMessage.swift in Sources */,
 				BFB1125E2B0F558A00A301AC /* AdHocModel.swift in Sources */,
 				BFB1126E2B1071AD00A301AC /* Position.swift in Sources */,
+				BF8EFDB32B14601B00623870 /* ConvexHullInfoModel.swift in Sources */,
 				BFB112802B10B71F00A301AC /* LoudspeakerInfoModel.swift in Sources */,
 				BFB1126C2B10716F00A301AC /* PositionView.swift in Sources */,
 			);

@@ -1,9 +1,14 @@
-//
-//  SwiftUIView.swift
-//  AdHocLoudspeakerArray
-//
-//  Created by 藤田一旗 on 2023/11/24.
-//
+///
+///
+///Project name: AdHocLoudspeakerArray
+/// Class name: SoundOperatorView
+/// Creator: Kazuki Fujita
+/// Update: 2023/11/27 (Mon)
+///
+/// ---Explanation---
+/// Sound operator view
+///
+///
 
 import SwiftUI
 

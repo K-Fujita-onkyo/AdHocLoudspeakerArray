@@ -1,9 +1,14 @@
-//
-//  LoudspeakersDictionary.swift
-//  AdHocLoudspeakerArray
-//
-//  Created by 藤田一旗 on 2023/11/24.
-//
+///
+///
+///Project name: AdHocLoudspeakerArray
+/// Class name: LoudspeakerInformationsDictionary
+/// Creator: Kazuki Fujita
+/// Update: 2023/11/27 (Mon)
+///
+/// ---Explanation---
+/// Loudspeaker Informations Dictionary
+///
+///
 
 import Foundation
 import NearbyInteraction
@@ -18,6 +23,7 @@ class LoudspeakerInformationsDictionary: NSObject {
         super.init()
     }
     
+    // MARK: - Updating methods
     func updateValue(key: NIDiscoveryToken, loudspeakerInfoModel: LoudspeakerInfoModel){
         self.dictionary.updateValue(loudspeakerInfoModel, forKey: key)
     }
@@ -58,6 +64,7 @@ class LoudspeakerInformationsDictionary: NSObject {
         }
     }
     
+    // MARK: - Getting method
     func getValue(key: NIDiscoveryToken)->LoudspeakerInfoModel? {
         return self.dictionary[key]
     }
@@ -68,5 +75,12 @@ class LoudspeakerInformationsDictionary: NSObject {
     
     func getMCPeerID(key: NIDiscoveryToken)->MCPeerID? {
         return self.dictionary[key]?.mcPeerID
+    }
+    
+    // MARK: - Resetting method
+    func resetIsConvexHull(){
+        for (key, _) in self.dictionary {
+            self.dictionary[key]?.isConvexHull = false
+        }
     }
 }

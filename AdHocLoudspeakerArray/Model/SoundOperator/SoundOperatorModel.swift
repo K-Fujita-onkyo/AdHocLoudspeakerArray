@@ -3,7 +3,7 @@
 ///Project name: AdHocLoudspeakerArray
 /// Class name: SoundOperatorModel
 /// Creator: Kazuki Fujita
-/// Update: 2023/11/24 (Fri)
+/// Update: 2023/11/27 (Mon)
 ///
 /// ---Explanation---
 /// Sound operator model
@@ -18,6 +18,7 @@ class SoundOperatorModel: AdHocModel, ObservableObject {
     // MARK: - Test Instances
     @Published var test: String = "test"
     @Published var loudspeakerInfoDict: LoudspeakerInformationsDictionary = LoudspeakerInformationsDictionary()
+    var innerRoom: ConvexHullInfoModel = ConvexHullInfoModel()
     
     override init() {
         super.init()
@@ -25,15 +26,24 @@ class SoundOperatorModel: AdHocModel, ObservableObject {
     
     func updateLoudspeakerLocation(nearbyObject: NINearbyObject){
         
+        let niDiscoveryToken: NIDiscoveryToken = nearbyObject.discoveryToken
         let distance: Float! = nearbyObject.distance
-        let direction: simd_float3! = nearbyObject.direction
+        var direction: simd_float3! = nearbyObject.direction
         
         if  distance == nil || direction == nil {
-            print("Debug: No distance and direction in \(nearbyObject.discoveryToken)")
+            print("Debug(soModel): Can't measure the location of \(niDiscoveryToken)")
             return
         }
         
+        // FIXME: - This is for simulator values. Please deleted in a real test.
+        direction = simd_float3(x: direction.x * 10, y: direction.z * 10, z: direction.y * 10)
         
+        self.loudspeakerInfoDict.updateValue(
+            key: niDiscoveryToken,
+            isConvexHull: false,
+            unitVector: direction,
+            distance: distance
+        )
         
     }
     
@@ -43,39 +53,34 @@ class SoundOperatorModel: AdHocModel, ObservableObject {
     // Notifies me when the session updates nearby objects.
     override func session(_ session: NISession, didUpdate nearbyObjects: [NINearbyObject]) {
         
+        self.innerRoom.reset()
+        self.loudspeakerInfoDict.resetIsConvexHull()
+        
         for nearbyObject in nearbyObjects {
-            
-            let niDiscoveryToken: NIDiscoveryToken = nearbyObject.discoveryToken
-            let distance: Float! = nearbyObject.distance
-            let direction: simd_float3! = nearbyObject.direction
-            
-            // If these measurement fails normally
-            if distance == nil || direction == nil{
-                print("Debug(soModel): Can't measure the location of \(niDiscoveryToken)")
-                break
-            }
-            
-            // DEBUG: - print("Debug(soModel): niDiscoveryModel->\(niDiscoveryToken), distance->\(String(describing: distance)), direction->\(String(describing: direction))")
-            
-            self.loudspeakerInfoDict.updateValue(
-                key: niDiscoveryToken,
-                isConvexHull: false,
-                unitVector: direction,
-                distance: distance
-            )
+            self.updateLoudspeakerLocation(nearbyObject: nearbyObject)
+        }
+        
+        self.innerRoom.appendPointsByLIDict(loudspeakerInfoDict: self.loudspeakerInfoDict)
+        self.innerRoom.calculateConvexHull()
+        
+        for (niDiscoveryToken, _) in self.innerRoom.convexHull.array {
+            self.loudspeakerInfoDict.dictionary[niDiscoveryToken!]?.isConvexHull = true
+        }
+        
+        for (_, loudspeakerInfo) in self.loudspeakerInfoDict.dictionary {
             
             let message: LoudspeakerInfoMessage!
             let mcPeerID: MCPeerID!
             let data: Data!
             
-            message = self.loudspeakerInfoDict.getLoudspeakerInfoMessage(key: niDiscoveryToken)
-            mcPeerID = self.loudspeakerInfoDict.getMCPeerID(key: niDiscoveryToken)
-            data = self.convertInstanceToData(instance: message)
+            message = loudspeakerInfo.outputMessage()
+            mcPeerID = loudspeakerInfo.mcPeerID
+            data = convertInstanceToData(instance: message)
             
             if message == nil || mcPeerID  == nil || data == nil{
                 break
             }
-            print("Debug(soModel): Prepare to send the message.")
+            
             self.sendData(data: data, mcPeerID: mcPeerID)
         }
     }

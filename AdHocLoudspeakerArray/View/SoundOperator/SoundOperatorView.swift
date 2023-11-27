@@ -8,9 +8,23 @@
 import SwiftUI
 
 struct SoundOperatorView: View {
+    @State var soundOpelatorModel: SoundOperatorModel = SoundOperatorModel()
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        Text("Sound operator")
+        Text(soundOpelatorModel.test)
+        Button(action: {
+            self.soundOpelatorModel.startHosting()
+        }) {
+            Text("Start Hosting")
+        }.buttonStyle(RoundedCornersButtonStyle())
+        
+        Button(action: {
+            self.soundOpelatorModel.stopHosting()
+        }) {
+            Text("Stop Hosting")
+        }.buttonStyle(RoundedCornersButtonStyle())
     }
+    
 }
 
 #Preview {

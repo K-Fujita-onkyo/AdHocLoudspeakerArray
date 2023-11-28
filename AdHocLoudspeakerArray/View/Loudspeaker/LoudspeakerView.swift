@@ -18,24 +18,55 @@ struct LoudspeakerView: View {
     @ObservedObject var loudspeakerModel: LoudspeakerModel  = LoudspeakerModel()
     
     var body: some View {
-        Text("Loudspeaker")
-        Text(loudspeakerModel.test)
-        Text(String(loudspeakerModel.information.isConvexHull))
-        Text("x: " + String(loudspeakerModel.information.location.x))
-        Text("y: " + String(loudspeakerModel.information.location.y))
-        Text("z: " + String(loudspeakerModel.information.location.z))
-        Button(action: {
-            self.loudspeakerModel.startBrowsing()
-        }) {
-            Text("Start Browsing")
-        }.buttonStyle(RoundedCornersButtonStyle())
         
-        Button(action: {
-            self.loudspeakerModel.stopBrowsing()
-        }) {
-            Text("Stop Browsing")
-        }.buttonStyle(RoundedCornersButtonStyle())
-        
+        ZStack {
+            
+            if loudspeakerModel.information.isConvexHull {
+                Color.green
+                    .edgesIgnoringSafeArea(.all)
+            }else{
+                Color.gray
+                    .edgesIgnoringSafeArea(.all)
+            }
+            
+            VStack{
+                Text("Loudspeaker")
+                    .font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
+                    .bold()
+                    .foregroundColor(Color.white)
+                
+                Text("P2P: " + loudspeakerModel.isConnected)
+                    .font(.title2)
+                    .foregroundColor(Color.white)
+                
+                Text(String(loudspeakerModel.information.isConvexHull))
+                    .font(.title2)
+                    .foregroundColor(Color.white)
+                Text("x: " + String(loudspeakerModel.information.location.x))
+                    .font(.title2)
+                    .foregroundColor(Color.white)
+                Text("y: " + String(loudspeakerModel.information.location.y))
+                    .font(.title2)
+                    .foregroundColor(Color.white)
+                Text("z: " + String(loudspeakerModel.information.location.z))
+                    .font(.title2)
+                    .foregroundColor(Color.white)
+                
+                HStack {
+                    Button(action: {
+                        self.loudspeakerModel.startBrowsing()
+                    }) {
+                        Text("Start Browsing")
+                    }.buttonStyle(RoundedCornersButtonStyle())
+                    
+                    Button(action: {
+                        self.loudspeakerModel.stopBrowsing()
+                    }) {
+                        Text("Stop Browsing")
+                    }.buttonStyle(RoundedCornersButtonStyle())
+                }
+            }
+        }
     }
     
 }

@@ -17,6 +17,7 @@ import MultipeerConnectivity
 
 class LoudspeakerModel: AdHocModel, ObservableObject {
     @Published var test: String = "test"
+    @Published var isConnected: String = "Not connected."
     @Published var information: LoudspeakerInfoMessage = LoudspeakerInfoMessage(isConvexHull: false, location: simd_float3(x: 0, y: 0, z: 0))
     
     override init(){
@@ -39,13 +40,14 @@ class LoudspeakerModel: AdHocModel, ObservableObject {
         switch state{
         case .connected:
             print("Connected")
+            self.isConnected = "Connected!!"
             self.sendData(data: self.myDiscoveryTokenData, mcPeerIDs: session.connectedPeers)
         case .connecting:
             print("Connecting")
-            
+            self.isConnected = "Connecting..."
         case .notConnected:
             print("Not connected")
-            
+            self.isConnected = "Not connected."
         default:
             print("Other")
         }

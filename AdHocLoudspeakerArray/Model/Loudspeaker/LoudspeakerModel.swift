@@ -20,6 +20,9 @@ class LoudspeakerModel: AdHocModel, ObservableObject {
     @Published var test: String = "test"
     @Published var isConnected: String = "Not connected."
     @Published var information: LoudspeakerInfoMessage = LoudspeakerInfoMessage(isConvexHull: false, location: simd_float3(x: 0, y: 0, z: 0))
+    
+    let soundPathCalculator: SoundPathModel = SoundPathModel()
+    
     let audioEngine: AVAudioEngine = AVAudioEngine()
     let audioPlayerNode: AVAudioPlayerNode = AVAudioPlayerNode()
     let format = AVAudioFormat(commonFormat: .pcmFormatFloat32, sampleRate: 44100, channels: 1, interleaved: false)!
@@ -66,7 +69,9 @@ class LoudspeakerModel: AdHocModel, ObservableObject {
         }
         
         if let audioInfo = self.convertDataToInstance(type: AudioInfoMessage.self, data: data){
-            self.playAudioFromFloatArray(floatArray: audioInfo.buffer)
+            print(audioInfo.location)
+            let soundPath = self.soundPathCalculator.calcSoundPath(soundFloatArray: audioInfo.buffer, soundLocation: audioInfo.location, loudspeakerLocation: information.location)
+            self.playAudioFromFloatArray(floatArray: soundPath)
         }
         
         self.startNISession(niDiscoveryTokenData: data)
@@ -102,5 +107,4 @@ class LoudspeakerModel: AdHocModel, ObservableObject {
     }
     
 }
-
 

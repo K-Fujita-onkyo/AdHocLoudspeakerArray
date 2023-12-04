@@ -12,6 +12,7 @@
 		BF02E1CA2B15AB8C008DE254 /* AudioStreamerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF02E1C92B15AB8C008DE254 /* AudioStreamerModel.swift */; };
 		BF02E1CC2B160384008DE254 /* AudioInfoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF02E1CB2B160384008DE254 /* AudioInfoModel.swift */; };
 		BF02E1CE2B1609E0008DE254 /* QueueModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF02E1CD2B1609E0008DE254 /* QueueModel.swift */; };
+		BF7663B32B1DA8A200F29FF9 /* SoundPathModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF7663B22B1DA8A200F29FF9 /* SoundPathModel.swift */; };
 		BF8EFDB32B14601B00623870 /* ConvexHullInfoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF8EFDB22B14601B00623870 /* ConvexHullInfoModel.swift */; };
 		BF8EFDB62B14624C00623870 /* StackModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF8EFDB52B14624C00623870 /* StackModel.swift */; };
 		BF94323A2B17233600499C3A /* OuterRoomSettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF9432392B17233600499C3A /* OuterRoomSettingView.swift */; };
@@ -44,6 +45,7 @@
 		BF02E1C92B15AB8C008DE254 /* AudioStreamerModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioStreamerModel.swift; sourceTree = "<group>"; };
 		BF02E1CB2B160384008DE254 /* AudioInfoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioInfoModel.swift; sourceTree = "<group>"; };
 		BF02E1CD2B1609E0008DE254 /* QueueModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QueueModel.swift; sourceTree = "<group>"; };
+		BF7663B22B1DA8A200F29FF9 /* SoundPathModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundPathModel.swift; sourceTree = "<group>"; };
 		BF8EFDB22B14601B00623870 /* ConvexHullInfoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConvexHullInfoModel.swift; sourceTree = "<group>"; };
 		BF8EFDB52B14624C00623870 /* StackModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StackModel.swift; sourceTree = "<group>"; };
 		BF9432392B17233600499C3A /* OuterRoomSettingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OuterRoomSettingView.swift; sourceTree = "<group>"; };
@@ -90,6 +92,14 @@
 				BF02E1CB2B160384008DE254 /* AudioInfoModel.swift */,
 			);
 			path = SoundStreamer;
+			sourceTree = "<group>";
+		};
+		BF7663B12B1DA88900F29FF9 /* SoundPath */ = {
+			isa = PBXGroup;
+			children = (
+				BF7663B22B1DA8A200F29FF9 /* SoundPathModel.swift */,
+			);
+			path = SoundPath;
 			sourceTree = "<group>";
 		};
 		BF8EFDB12B145FC400623870 /* ConvexHull */ = {
@@ -258,6 +268,7 @@
 		BFB112822B10D1EE00A301AC /* Loudspeaker */ = {
 			isa = PBXGroup;
 			children = (
+				BF7663B12B1DA88900F29FF9 /* SoundPath */,
 				BFB112612B0F64FE00A301AC /* LoudspeakerModel.swift */,
 			);
 			path = Loudspeaker;
@@ -354,6 +365,7 @@
 				BFB1127A2B10AFBA00A301AC /* AudioInfoMessage.swift in Sources */,
 				BFB112722B10725800A301AC /* SoundOperatorView.swift in Sources */,
 				BF9432452B186E1400499C3A /* ConvexHullShape.swift in Sources */,
+				BF7663B32B1DA8A200F29FF9 /* SoundPathModel.swift in Sources */,
 				BF94323E2B17304B00499C3A /* OuterRoomInfoMessage.swift in Sources */,
 				BFB112602B0F63CD00A301AC /* SoundOperatorModel.swift in Sources */,
 				BFB112622B0F64FE00A301AC /* LoudspeakerModel.swift in Sources */,

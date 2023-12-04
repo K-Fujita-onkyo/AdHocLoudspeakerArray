@@ -65,6 +65,13 @@ struct LoudspeakerView: View {
                         Text("Stop Browsing")
                     }.buttonStyle(RoundedCornersButtonStyle())
                 }
+                
+                Button(action: {
+                    self.loudspeakerModel.playAudio()
+                }) {
+                    Text("Play Audio")
+                }.buttonStyle(RoundedCornersButtonStyle())
+                
             }
         }
     }

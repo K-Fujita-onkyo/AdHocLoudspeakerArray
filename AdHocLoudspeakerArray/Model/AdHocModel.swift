@@ -59,6 +59,7 @@ class AdHocModel: NSObject,
         self.myDiscoveryTokenData = try! NSKeyedArchiver.archivedData(withRootObject: token, requiringSecureCoding: true)
     }
     
+    @discardableResult
     func startNISession(niDiscoveryTokenData: Data)->NIDiscoveryToken!{
         guard let niDiscoveryToken = try? NSKeyedUnarchiver.unarchivedObject(ofClass: NIDiscoveryToken.self, from: niDiscoveryTokenData)
         else {

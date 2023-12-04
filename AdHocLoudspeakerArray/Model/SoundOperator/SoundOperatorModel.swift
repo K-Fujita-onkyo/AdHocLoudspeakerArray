@@ -15,13 +15,22 @@ import NearbyInteraction
 import MultipeerConnectivity
 
 class SoundOperatorModel: AdHocModel, ObservableObject {
+    
+    @Published var loudspeakerPoints: [simd_float2] = []
+    @Published var innerRoomPoints: [simd_float2] = []
+    
     // MARK: - Test Instances
-    @Published var test: String = "test"
     @Published var loudspeakerInfoDict: LoudspeakerInformationsDictionary = LoudspeakerInformationsDictionary()
+    @Published var lsMCPeerIDs: [MCPeerID] = []
     var innerRoom: ConvexHullInfoModel = ConvexHullInfoModel()
+    @Published var outerRoom: OuterRoomInfoModel = OuterRoomInfoModel()
+    var audioStreamer: AudioStreamerModel = AudioStreamerModel()
+    @Published var audioLocation = simd_float3(x: 0, y: 0, z: 0)
+    
     
     override init() {
         super.init()
+
     }
     
     func updateLoudspeakerLocation(nearbyObject: NINearbyObject){
@@ -47,6 +56,27 @@ class SoundOperatorModel: AdHocModel, ObservableObject {
         
     }
     
+    @objc func sendAudioInfoMessage(){
+        
+        if self.lsMCPeerIDs.isEmpty {
+            return
+        }
+        
+        if let audioInfoMessage: AudioInfoMessage = self.audioStreamer.getAudioInfoMessage(){
+            if let data: Data  = self.convertInstanceToData(instance: audioInfoMessage){
+                self.sendData(data: data, mcPeerIDs: lsMCPeerIDs)
+                print("sent audio data")
+            }
+        }
+    }
+    
+    func sendOuterRoomInfoMessage(){
+        let outerRoomInfoMessage: OuterRoomInfoMessage = self.outerRoom.getOuterRoomInfoMessage()
+        if let data: Data = self.convertInstanceToData(instance: outerRoomInfoMessage) {
+            self.sendData(data: data, mcPeerIDs: lsMCPeerIDs)
+        }
+    }
+    
     // MARK: - NISessionDelegate Methods
     
     // Session to to detect movement of other devices
@@ -60,8 +90,10 @@ class SoundOperatorModel: AdHocModel, ObservableObject {
             self.updateLoudspeakerLocation(nearbyObject: nearbyObject)
         }
         
+        self.loudspeakerPoints = self.loudspeakerInfoDict.getAllLoudspeakerLocation()
         self.innerRoom.appendPointsByLIDict(loudspeakerInfoDict: self.loudspeakerInfoDict)
         self.innerRoom.calculateConvexHull()
+        self.innerRoomPoints = self.innerRoom.getConvPoints()
         
         for (niDiscoveryToken, _) in self.innerRoom.convexHull.array {
             self.loudspeakerInfoDict.dictionary[niDiscoveryToken!]?.isConvexHull = true
@@ -112,7 +144,13 @@ class SoundOperatorModel: AdHocModel, ObservableObject {
 
         if let niDiscoveryToken:NIDiscoveryToken = self.startNISession(niDiscoveryTokenData: data) {
             self.loudspeakerInfoDict.updateValue(key: niDiscoveryToken, loudspeakerInfoModel: LoudspeakerInfoModel(mcPeerID: peerID))
+            self.lsMCPeerIDs.append(peerID)
+            self.sendOuterRoomInfoMessage()
         }
         
+    }
+    
+    func initAudioBuffer(){
+        self.audioStreamer.assignAudioToBuffer(audioFloatArray: self.audioStreamer.audioFloatArray)
     }
 }

@@ -146,4 +146,13 @@ extension ConvexHullInfoModel {
         }
     }
     
+    func getConvPoints()->[simd_float2]{
+        var convPoint: [simd_float2] = []
+        for pointVec3 in self.convexHull.array {
+            let pointVec2: simd_float2 = simd_float2(x: pointVec3.location.x, y: pointVec3.location.z)
+            convPoint.append(pointVec2)
+        }
+        return convPoint
+    }
+    
 }

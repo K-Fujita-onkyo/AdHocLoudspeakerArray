@@ -7,8 +7,19 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BF02E1C52B15AAD2008DE254 /* noise.wav in Resources */ = {isa = PBXBuildFile; fileRef = BF02E1C42B15AAD2008DE254 /* noise.wav */; };
+		BF02E1C72B15AB2E008DE254 /* Drums.wav in Resources */ = {isa = PBXBuildFile; fileRef = BF02E1C62B15AB2E008DE254 /* Drums.wav */; };
+		BF02E1CA2B15AB8C008DE254 /* AudioStreamerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF02E1C92B15AB8C008DE254 /* AudioStreamerModel.swift */; };
+		BF02E1CC2B160384008DE254 /* AudioInfoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF02E1CB2B160384008DE254 /* AudioInfoModel.swift */; };
+		BF02E1CE2B1609E0008DE254 /* QueueModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF02E1CD2B1609E0008DE254 /* QueueModel.swift */; };
 		BF8EFDB32B14601B00623870 /* ConvexHullInfoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF8EFDB22B14601B00623870 /* ConvexHullInfoModel.swift */; };
 		BF8EFDB62B14624C00623870 /* StackModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF8EFDB52B14624C00623870 /* StackModel.swift */; };
+		BF94323A2B17233600499C3A /* OuterRoomSettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF9432392B17233600499C3A /* OuterRoomSettingView.swift */; };
+		BF94323C2B17295A00499C3A /* SideMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF94323B2B17295A00499C3A /* SideMenuView.swift */; };
+		BF94323E2B17304B00499C3A /* OuterRoomInfoMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF94323D2B17304B00499C3A /* OuterRoomInfoMessage.swift */; };
+		BF9432412B17313B00499C3A /* OuterRoomInfoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF9432402B17313B00499C3A /* OuterRoomInfoModel.swift */; };
+		BF9432452B186E1400499C3A /* ConvexHullShape.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF9432432B186E1400499C3A /* ConvexHullShape.swift */; };
+		BF9432462B186E1400499C3A /* ArrowShape.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF9432442B186E1400499C3A /* ArrowShape.swift */; };
 		BFB1124F2B0F554300A301AC /* AdHocLoudspeakerArrayApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFB1124E2B0F554300A301AC /* AdHocLoudspeakerArrayApp.swift */; };
 		BFB112512B0F554300A301AC /* TopPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFB112502B0F554300A301AC /* TopPageView.swift */; };
 		BFB112532B0F554600A301AC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BFB112522B0F554600A301AC /* Assets.xcassets */; };
@@ -22,14 +33,25 @@
 		BFB112722B10725800A301AC /* SoundOperatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFB112712B10725800A301AC /* SoundOperatorView.swift */; };
 		BFB112752B108DDE00A301AC /* LoudspeakerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFB112742B108DDE00A301AC /* LoudspeakerView.swift */; };
 		BFB112782B10AFA200A301AC /* LoudspeakerInfoMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFB112772B10AFA200A301AC /* LoudspeakerInfoMessage.swift */; };
-		BFB1127A2B10AFBA00A301AC /* SoundInfoMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFB112792B10AFBA00A301AC /* SoundInfoMessage.swift */; };
+		BFB1127A2B10AFBA00A301AC /* AudioInfoMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFB112792B10AFBA00A301AC /* AudioInfoMessage.swift */; };
 		BFB112802B10B71F00A301AC /* LoudspeakerInfoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFB1127F2B10B71F00A301AC /* LoudspeakerInfoModel.swift */; };
-		BFB112882B10D84100A301AC /* LoudspeakerInformationsDictionary{.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFB112872B10D84100A301AC /* LoudspeakerInformationsDictionary{.swift */; };
+		BFB112882B10D84100A301AC /* LoudspeakerInformationsDictionary.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFB112872B10D84100A301AC /* LoudspeakerInformationsDictionary.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		BF02E1C42B15AAD2008DE254 /* noise.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = noise.wav; sourceTree = "<group>"; };
+		BF02E1C62B15AB2E008DE254 /* Drums.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = Drums.wav; sourceTree = "<group>"; };
+		BF02E1C92B15AB8C008DE254 /* AudioStreamerModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioStreamerModel.swift; sourceTree = "<group>"; };
+		BF02E1CB2B160384008DE254 /* AudioInfoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioInfoModel.swift; sourceTree = "<group>"; };
+		BF02E1CD2B1609E0008DE254 /* QueueModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QueueModel.swift; sourceTree = "<group>"; };
 		BF8EFDB22B14601B00623870 /* ConvexHullInfoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConvexHullInfoModel.swift; sourceTree = "<group>"; };
 		BF8EFDB52B14624C00623870 /* StackModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StackModel.swift; sourceTree = "<group>"; };
+		BF9432392B17233600499C3A /* OuterRoomSettingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OuterRoomSettingView.swift; sourceTree = "<group>"; };
+		BF94323B2B17295A00499C3A /* SideMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuView.swift; sourceTree = "<group>"; };
+		BF94323D2B17304B00499C3A /* OuterRoomInfoMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OuterRoomInfoMessage.swift; sourceTree = "<group>"; };
+		BF9432402B17313B00499C3A /* OuterRoomInfoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OuterRoomInfoModel.swift; sourceTree = "<group>"; };
+		BF9432432B186E1400499C3A /* ConvexHullShape.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConvexHullShape.swift; sourceTree = "<group>"; };
+		BF9432442B186E1400499C3A /* ArrowShape.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArrowShape.swift; sourceTree = "<group>"; };
 		BFB1124B2B0F554300A301AC /* AdHocLoudspeakerArray.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AdHocLoudspeakerArray.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BFB1124E2B0F554300A301AC /* AdHocLoudspeakerArrayApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdHocLoudspeakerArrayApp.swift; sourceTree = "<group>"; };
 		BFB112502B0F554300A301AC /* TopPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopPageView.swift; sourceTree = "<group>"; };
@@ -45,9 +67,9 @@
 		BFB112712B10725800A301AC /* SoundOperatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundOperatorView.swift; sourceTree = "<group>"; };
 		BFB112742B108DDE00A301AC /* LoudspeakerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoudspeakerView.swift; sourceTree = "<group>"; };
 		BFB112772B10AFA200A301AC /* LoudspeakerInfoMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoudspeakerInfoMessage.swift; sourceTree = "<group>"; };
-		BFB112792B10AFBA00A301AC /* SoundInfoMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundInfoMessage.swift; sourceTree = "<group>"; };
+		BFB112792B10AFBA00A301AC /* AudioInfoMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioInfoMessage.swift; sourceTree = "<group>"; };
 		BFB1127F2B10B71F00A301AC /* LoudspeakerInfoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoudspeakerInfoModel.swift; sourceTree = "<group>"; };
-		BFB112872B10D84100A301AC /* LoudspeakerInformationsDictionary{.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LoudspeakerInformationsDictionary{.swift"; sourceTree = "<group>"; };
+		BFB112872B10D84100A301AC /* LoudspeakerInformationsDictionary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoudspeakerInformationsDictionary.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +83,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		BF02E1C82B15AB6E008DE254 /* SoundStreamer */ = {
+			isa = PBXGroup;
+			children = (
+				BF02E1C92B15AB8C008DE254 /* AudioStreamerModel.swift */,
+				BF02E1CB2B160384008DE254 /* AudioInfoModel.swift */,
+			);
+			path = SoundStreamer;
+			sourceTree = "<group>";
+		};
 		BF8EFDB12B145FC400623870 /* ConvexHull */ = {
 			isa = PBXGroup;
 			children = (
@@ -73,8 +104,26 @@
 			isa = PBXGroup;
 			children = (
 				BF8EFDB52B14624C00623870 /* StackModel.swift */,
+				BF02E1CD2B1609E0008DE254 /* QueueModel.swift */,
 			);
 			path = Algorithm;
+			sourceTree = "<group>";
+		};
+		BF94323F2B17312200499C3A /* OuterRoom */ = {
+			isa = PBXGroup;
+			children = (
+				BF9432402B17313B00499C3A /* OuterRoomInfoModel.swift */,
+			);
+			path = OuterRoom;
+			sourceTree = "<group>";
+		};
+		BF9432422B186DF700499C3A /* Shape */ = {
+			isa = PBXGroup;
+			children = (
+				BF9432442B186E1400499C3A /* ArrowShape.swift */,
+				BF9432432B186E1400499C3A /* ConvexHullShape.swift */,
+			);
+			path = Shape;
 			sourceTree = "<group>";
 		};
 		BFB112422B0F554300A301AC = {
@@ -109,7 +158,9 @@
 		BFB112542B0F554600A301AC /* Preview Content */ = {
 			isa = PBXGroup;
 			children = (
+				BF02E1C42B15AAD2008DE254 /* noise.wav */,
 				BFB112552B0F554600A301AC /* Preview Assets.xcassets */,
+				BF02E1C62B15AB2E008DE254 /* Drums.wav */,
 			);
 			path = "Preview Content";
 			sourceTree = "<group>";
@@ -117,6 +168,8 @@
 		BFB1125C2B0F556800A301AC /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				BF94323F2B17312200499C3A /* OuterRoom */,
+				BF02E1C82B15AB6E008DE254 /* SoundStreamer */,
 				BF8EFDB42B14622B00623870 /* Algorithm */,
 				BF8EFDB12B145FC400623870 /* ConvexHull */,
 				BFB112832B10D1FC00A301AC /* SoundOperator */,
@@ -130,6 +183,7 @@
 		BFB112652B106E6D00A301AC /* View */ = {
 			isa = PBXGroup;
 			children = (
+				BF9432422B186DF700499C3A /* Shape */,
 				BFB112732B108DBF00A301AC /* Loudspeaker */,
 				BFB112702B10724100A301AC /* SoundOperator */,
 				BFB112692B1070F500A301AC /* TopPage */,
@@ -168,6 +222,8 @@
 			isa = PBXGroup;
 			children = (
 				BFB112712B10725800A301AC /* SoundOperatorView.swift */,
+				BF9432392B17233600499C3A /* OuterRoomSettingView.swift */,
+				BF94323B2B17295A00499C3A /* SideMenuView.swift */,
 			);
 			path = SoundOperator;
 			sourceTree = "<group>";
@@ -184,7 +240,8 @@
 			isa = PBXGroup;
 			children = (
 				BFB112772B10AFA200A301AC /* LoudspeakerInfoMessage.swift */,
-				BFB112792B10AFBA00A301AC /* SoundInfoMessage.swift */,
+				BFB112792B10AFBA00A301AC /* AudioInfoMessage.swift */,
+				BF94323D2B17304B00499C3A /* OuterRoomInfoMessage.swift */,
 			);
 			path = Structure;
 			sourceTree = "<group>";
@@ -193,7 +250,7 @@
 			isa = PBXGroup;
 			children = (
 				BFB1127F2B10B71F00A301AC /* LoudspeakerInfoModel.swift */,
-				BFB112872B10D84100A301AC /* LoudspeakerInformationsDictionary{.swift */,
+				BFB112872B10D84100A301AC /* LoudspeakerInformationsDictionary.swift */,
 			);
 			path = LoudspeakerInfo;
 			sourceTree = "<group>";
@@ -273,6 +330,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BF02E1C72B15AB2E008DE254 /* Drums.wav in Resources */,
+				BF02E1C52B15AAD2008DE254 /* noise.wav in Resources */,
 				BFB112562B0F554600A301AC /* Preview Assets.xcassets in Resources */,
 				BFB112532B0F554600A301AC /* Assets.xcassets in Resources */,
 			);
@@ -286,20 +345,29 @@
 			buildActionMask = 2147483647;
 			files = (
 				BFB112682B10700600A301AC /* RoundedCornersButtonStyle.swift in Sources */,
-				BFB112882B10D84100A301AC /* LoudspeakerInformationsDictionary{.swift in Sources */,
+				BFB112882B10D84100A301AC /* LoudspeakerInformationsDictionary.swift in Sources */,
 				BF8EFDB62B14624C00623870 /* StackModel.swift in Sources */,
+				BF02E1CE2B1609E0008DE254 /* QueueModel.swift in Sources */,
 				BFB112512B0F554300A301AC /* TopPageView.swift in Sources */,
 				BFB112752B108DDE00A301AC /* LoudspeakerView.swift in Sources */,
-				BFB1127A2B10AFBA00A301AC /* SoundInfoMessage.swift in Sources */,
+				BF9432412B17313B00499C3A /* OuterRoomInfoModel.swift in Sources */,
+				BFB1127A2B10AFBA00A301AC /* AudioInfoMessage.swift in Sources */,
 				BFB112722B10725800A301AC /* SoundOperatorView.swift in Sources */,
+				BF9432452B186E1400499C3A /* ConvexHullShape.swift in Sources */,
+				BF94323E2B17304B00499C3A /* OuterRoomInfoMessage.swift in Sources */,
 				BFB112602B0F63CD00A301AC /* SoundOperatorModel.swift in Sources */,
 				BFB112622B0F64FE00A301AC /* LoudspeakerModel.swift in Sources */,
 				BFB1124F2B0F554300A301AC /* AdHocLoudspeakerArrayApp.swift in Sources */,
+				BF9432462B186E1400499C3A /* ArrowShape.swift in Sources */,
+				BF02E1CC2B160384008DE254 /* AudioInfoModel.swift in Sources */,
 				BFB112782B10AFA200A301AC /* LoudspeakerInfoMessage.swift in Sources */,
 				BFB1125E2B0F558A00A301AC /* AdHocModel.swift in Sources */,
+				BF94323A2B17233600499C3A /* OuterRoomSettingView.swift in Sources */,
+				BF94323C2B17295A00499C3A /* SideMenuView.swift in Sources */,
 				BFB1126E2B1071AD00A301AC /* Position.swift in Sources */,
 				BF8EFDB32B14601B00623870 /* ConvexHullInfoModel.swift in Sources */,
 				BFB112802B10B71F00A301AC /* LoudspeakerInfoModel.swift in Sources */,
+				BF02E1CA2B15AB8C008DE254 /* AudioStreamerModel.swift in Sources */,
 				BFB1126C2B10716F00A301AC /* PositionView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

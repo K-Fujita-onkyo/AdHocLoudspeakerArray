@@ -12,6 +12,7 @@
 
 import SwiftUI
 import Foundation
+import AVFoundation
 import NearbyInteraction
 import MultipeerConnectivity
 
@@ -19,9 +20,13 @@ class LoudspeakerModel: AdHocModel, ObservableObject {
     @Published var test: String = "test"
     @Published var isConnected: String = "Not connected."
     @Published var information: LoudspeakerInfoMessage = LoudspeakerInfoMessage(isConvexHull: false, location: simd_float3(x: 0, y: 0, z: 0))
+    let audioEngine: AVAudioEngine = AVAudioEngine()
+    let audioPlayerNode: AVAudioPlayerNode = AVAudioPlayerNode()
+    let format = AVAudioFormat(commonFormat: .pcmFormatFloat32, sampleRate: 44100, channels: 1, interleaved: false)!
     
     override init(){
         super.init()
+        self.setupAudioPlayer()
     }
     
     // MARK: - NISessionDelegate Methods
@@ -60,6 +65,42 @@ class LoudspeakerModel: AdHocModel, ObservableObject {
             self.information = loudspeakerInfo
         }
         
+        if let audioInfo = self.convertDataToInstance(type: AudioInfoMessage.self, data: data){
+            self.playAudioFromFloatArray(floatArray: audioInfo.buffer)
+        }
+        
         self.startNISession(niDiscoveryTokenData: data)
     }
+    
+    func setupAudioPlayer(){
+        self.audioEngine.attach(self.audioPlayerNode)
+        self.audioEngine.connect(self.audioPlayerNode, to: self.audioEngine.mainMixerNode, format: self.format)
+    }
+    
+    func playAudio(){
+        do {
+          // エンジンを開始
+            try self.audioEngine.start()
+          // 再生
+            self.audioPlayerNode.play()
+        } catch let error {
+          print(error)
+        }
+    }
+    
+    func playAudioFromFloatArray(floatArray: [Float]) {
+
+        // Floatの配列からAVAudioPCMBufferを作成
+        let buffer = AVAudioPCMBuffer(pcmFormat: self.format, frameCapacity: AVAudioFrameCount(floatArray.count))!
+        buffer.frameLength = AVAudioFrameCount(floatArray.count)
+        let audioBuffer = buffer.floatChannelData![0]
+        for i in 0..<floatArray.count {
+            audioBuffer[i] = floatArray[i]
+        }
+        self.audioPlayerNode.scheduleBuffer(buffer) {
+        }
+    }
+    
 }
+
+

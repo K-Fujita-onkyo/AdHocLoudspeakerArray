@@ -77,6 +77,14 @@ class LoudspeakerInformationsDictionary: NSObject {
         return self.dictionary[key]?.mcPeerID
     }
     
+    func getAllLoudspeakerLocation()->[simd_float2]{
+        var pointVec2: [simd_float2] = []
+        for (_ , info) in self.dictionary {
+            pointVec2.append(simd_float2(x: info.location.x, y: info.location.z))
+        }
+        return pointVec2
+    }
+    
     // MARK: - Resetting method
     func resetIsConvexHull(){
         for (key, _) in self.dictionary {

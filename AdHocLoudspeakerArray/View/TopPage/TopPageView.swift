@@ -16,6 +16,7 @@ struct TopPageView: View {
     
     @State private var showLoudspeakerView: Bool = false
     @State private var showSoundOpelatorView: Bool = false
+    var testPath: SoundPathModel = SoundPathModel()
     
     // Position button
     private  var positionList: [Position] = [
@@ -46,6 +47,12 @@ struct TopPageView: View {
                     PositionView(position: positionList[1])
                 }.sheet(isPresented: self.$showSoundOpelatorView) {
                     SoundOperatorView()
+                }.buttonStyle(RoundedCornersButtonStyle())
+                
+                Button(action: {
+                    self.testPath.test()
+                }) {
+                    Text("test")
                 }.buttonStyle(RoundedCornersButtonStyle())
                 
             }

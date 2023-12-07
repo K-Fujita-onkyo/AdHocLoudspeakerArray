@@ -12,6 +12,7 @@
 		BF02E1CA2B15AB8C008DE254 /* AudioStreamerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF02E1C92B15AB8C008DE254 /* AudioStreamerModel.swift */; };
 		BF02E1CC2B160384008DE254 /* AudioInfoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF02E1CB2B160384008DE254 /* AudioInfoModel.swift */; };
 		BF02E1CE2B1609E0008DE254 /* QueueModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF02E1CD2B1609E0008DE254 /* QueueModel.swift */; };
+		BF5F83462B1EEF1E000E0926 /* InnerRoomInfoMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF5F83452B1EEF1E000E0926 /* InnerRoomInfoMessage.swift */; };
 		BF7663B32B1DA8A200F29FF9 /* SoundPathModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF7663B22B1DA8A200F29FF9 /* SoundPathModel.swift */; };
 		BF8EFDB32B14601B00623870 /* ConvexHullInfoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF8EFDB22B14601B00623870 /* ConvexHullInfoModel.swift */; };
 		BF8EFDB62B14624C00623870 /* StackModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF8EFDB52B14624C00623870 /* StackModel.swift */; };
@@ -45,6 +46,7 @@
 		BF02E1C92B15AB8C008DE254 /* AudioStreamerModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioStreamerModel.swift; sourceTree = "<group>"; };
 		BF02E1CB2B160384008DE254 /* AudioInfoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioInfoModel.swift; sourceTree = "<group>"; };
 		BF02E1CD2B1609E0008DE254 /* QueueModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QueueModel.swift; sourceTree = "<group>"; };
+		BF5F83452B1EEF1E000E0926 /* InnerRoomInfoMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InnerRoomInfoMessage.swift; sourceTree = "<group>"; };
 		BF7663B22B1DA8A200F29FF9 /* SoundPathModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundPathModel.swift; sourceTree = "<group>"; };
 		BF8EFDB22B14601B00623870 /* ConvexHullInfoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConvexHullInfoModel.swift; sourceTree = "<group>"; };
 		BF8EFDB52B14624C00623870 /* StackModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StackModel.swift; sourceTree = "<group>"; };
@@ -252,6 +254,7 @@
 				BFB112772B10AFA200A301AC /* LoudspeakerInfoMessage.swift */,
 				BFB112792B10AFBA00A301AC /* AudioInfoMessage.swift */,
 				BF94323D2B17304B00499C3A /* OuterRoomInfoMessage.swift */,
+				BF5F83452B1EEF1E000E0926 /* InnerRoomInfoMessage.swift */,
 			);
 			path = Structure;
 			sourceTree = "<group>";
@@ -358,6 +361,7 @@
 				BFB112682B10700600A301AC /* RoundedCornersButtonStyle.swift in Sources */,
 				BFB112882B10D84100A301AC /* LoudspeakerInformationsDictionary.swift in Sources */,
 				BF8EFDB62B14624C00623870 /* StackModel.swift in Sources */,
+				BF5F83462B1EEF1E000E0926 /* InnerRoomInfoMessage.swift in Sources */,
 				BF02E1CE2B1609E0008DE254 /* QueueModel.swift in Sources */,
 				BFB112512B0F554300A301AC /* TopPageView.swift in Sources */,
 				BFB112752B108DDE00A301AC /* LoudspeakerView.swift in Sources */,
@@ -514,11 +518,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"AdHocLoudspeakerArray/Preview Content\"";
-				DEVELOPMENT_TEAM = PQFYQAUU88;
+				DEVELOPMENT_TEAM = 3F3QJU2D65;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = AdHocLoudspeakerArray/Info.plist;
-				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_NSBluetoothAlwaysUsageDescription = "Playng ad hoc loudspeaker array.";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -528,7 +532,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.OnkyoLab.AdHocLoudspeakerArray;
+				PRODUCT_BUNDLE_IDENTIFIER = m5261108.AdHocLoudspeakerArray;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -544,11 +548,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"AdHocLoudspeakerArray/Preview Content\"";
-				DEVELOPMENT_TEAM = PQFYQAUU88;
+				DEVELOPMENT_TEAM = 3F3QJU2D65;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = AdHocLoudspeakerArray/Info.plist;
-				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_NSBluetoothAlwaysUsageDescription = "Playng ad hoc loudspeaker array.";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -558,7 +562,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.OnkyoLab.AdHocLoudspeakerArray;
+				PRODUCT_BUNDLE_IDENTIFIER = m5261108.AdHocLoudspeakerArray;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;

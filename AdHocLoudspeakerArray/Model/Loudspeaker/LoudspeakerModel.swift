@@ -21,6 +21,8 @@ class LoudspeakerModel: AdHocModel, ObservableObject {
     @Published var isConnected: String = "Not connected."
     @Published var information: LoudspeakerInfoMessage = LoudspeakerInfoMessage(isConvexHull: false, location: simd_float3(x: 0, y: 0, z: 0))
     
+    var innerRoom: InnerRoomInfoMessage = InnerRoomInfoMessage(locations: [])
+    var outerRoom: OuterRoomInfoMessage = OuterRoomInfoMessage(width: 10, height: 10, wallCoefficient: 0.05)
     let soundPathCalculator: SoundPathModel = SoundPathModel()
     
     let audioEngine: AVAudioEngine = AVAudioEngine()
@@ -30,6 +32,7 @@ class LoudspeakerModel: AdHocModel, ObservableObject {
     override init(){
         super.init()
         self.setupAudioPlayer()
+        self.playAudio()
     }
     
     // MARK: - NISessionDelegate Methods
@@ -70,8 +73,22 @@ class LoudspeakerModel: AdHocModel, ObservableObject {
         
         if let audioInfo = self.convertDataToInstance(type: AudioInfoMessage.self, data: data){
             print(audioInfo.location)
-            let soundPath = self.soundPathCalculator.calcSoundPath(soundFloatArray: audioInfo.buffer, soundLocation: audioInfo.location, loudspeakerLocation: information.location)
+            let soundPath = self.soundPathCalculator.calcSoundPath(
+                soundFloatArray: audioInfo.buffer,
+                soundLocation: audioInfo.location,
+                loudspeakerLocation: information.location,
+                innerRoom: self.innerRoom,
+                outerRoom: self.outerRoom
+            )
             self.playAudioFromFloatArray(floatArray: soundPath)
+        }
+        
+        if let outerRoomInfo = self.convertDataToInstance(type: OuterRoomInfoMessage.self, data: data){
+            self.outerRoom = outerRoomInfo
+        }
+        
+        if let innerRoomInfo = self.convertDataToInstance(type: InnerRoomInfoMessage.self, data: data){
+            self.innerRoom = innerRoomInfo
         }
         
         self.startNISession(niDiscoveryTokenData: data)
@@ -84,9 +101,7 @@ class LoudspeakerModel: AdHocModel, ObservableObject {
     
     func playAudio(){
         do {
-          // エンジンを開始
             try self.audioEngine.start()
-          // 再生
             self.audioPlayerNode.play()
         } catch let error {
           print(error)
@@ -95,7 +110,6 @@ class LoudspeakerModel: AdHocModel, ObservableObject {
     
     func playAudioFromFloatArray(floatArray: [Float]) {
 
-        // Floatの配列からAVAudioPCMBufferを作成
         let buffer = AVAudioPCMBuffer(pcmFormat: self.format, frameCapacity: AVAudioFrameCount(floatArray.count))!
         buffer.frameLength = AVAudioFrameCount(floatArray.count)
         let audioBuffer = buffer.floatChannelData![0]

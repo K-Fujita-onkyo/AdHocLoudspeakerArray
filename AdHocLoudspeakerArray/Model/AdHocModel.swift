@@ -37,7 +37,6 @@ class AdHocModel: NSObject,
     // MARK: - Initializing Method
     override init() {
         super.init()
-        self.setupNearbyInteraction()
         self.setupMultipeerConnectivity()
     }
     
@@ -59,6 +58,7 @@ class AdHocModel: NSObject,
         self.myDiscoveryTokenData = try! NSKeyedArchiver.archivedData(withRootObject: token, requiringSecureCoding: true)
     }
     
+    
     @discardableResult
     func startNISession(niDiscoveryTokenData: Data)->NIDiscoveryToken!{
         guard let niDiscoveryToken = try? NSKeyedUnarchiver.unarchivedObject(ofClass: NIDiscoveryToken.self, from: niDiscoveryTokenData)
@@ -67,8 +67,8 @@ class AdHocModel: NSObject,
         }
         
         let config = NINearbyPeerConfiguration(peerToken: niDiscoveryToken)
-        self.niSession?.run(config)
         
+        self.niSession?.run(config)
         return niDiscoveryToken
     }
     

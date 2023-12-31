@@ -49,11 +49,11 @@ struct TopPageView: View {
                     SoundOperatorView()
                 }.buttonStyle(RoundedCornersButtonStyle())
                 
-                Button(action: {
-                    self.testPath.test()
-                }) {
-                    Text("test")
-                }.buttonStyle(RoundedCornersButtonStyle())
+//                Button(action: {
+//                    self.testPath.test()
+//                }) {
+//                    Text("test")
+//                }.buttonStyle(RoundedCornersButtonStyle())
                 
             }
         }

@@ -155,4 +155,12 @@ extension ConvexHullInfoModel {
         return convPoint
     }
     
+    func getInnerRoomInfoMessage()->InnerRoomInfoMessage{
+        var locations: [simd_float3] = []
+        for pointVec3 in self.convexHull.array {
+            locations.append(simd_float3(x: pointVec3.location.x, y: pointVec3.location.y, z: pointVec3.location.z))
+        }
+        return InnerRoomInfoMessage(locations: locations)
+    }
+    
 }

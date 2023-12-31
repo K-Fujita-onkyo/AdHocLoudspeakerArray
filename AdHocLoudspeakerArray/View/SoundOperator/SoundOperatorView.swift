@@ -106,19 +106,36 @@ struct SoundOperatorView: View {
                                     }
                                     
                                     self.soundLocationBasedNI =  self.calcSoundLocationBasedOnOperatorPoint(point: self.soundLocation)
-                                    self.soundOpelatorModel.audioStreamer.location = simd_float3(x: Float(self.soundLocationBasedNI.x) , y: 0, z: Float(self.soundLocationBasedNI.y))
                                     
+                                    let roundLocation = simd_float3(
+                                        x: round(Float(self.soundLocationBasedNI.x) * 100) / 100,
+                                        y: 0,
+                                        z: round(Float(self.soundLocationBasedNI.y) * 100) / 100
+                                    )
+
+//                                    self.soundOpelatorModel.audioStreamer.location = roundLocation
+                                    if self.soundOpelatorModel.audioStreamer.location != roundLocation {
+                                        self.soundOpelatorModel.audioStreamer.location = roundLocation
+                                        self.soundOpelatorModel.sendAudioLocationInfoMessage()
+                                        print("enter")
+                                    }
                                 }))
                             
                         })
                         
                     }.frame(width: screen.width, height: CGFloat((self.outerRoomHeight/self.outerRoomWidth)) * screen.width)
                     
+                    Text(self.soundOpelatorModel.testText)
+                        .foregroundColor(Color.white)
+                        .lineLimit(nil)
                     
-                    Text("Number of units: " + String(self.soundOpelatorModel.lsMCPeerIDs.count))
+                    Text("Number of units: " + String(self.soundOpelatorModel.loudspeakerMCPeerIDs.count))
                         .font(.title2)
                         .foregroundColor(Color.white)
                     
+                    Text("Test " + String(self.soundOpelatorModel.testText))
+                        .font(.title2)
+                        .foregroundColor(Color.white)
                     
                     HStack{
                         
@@ -172,6 +189,18 @@ struct SoundOperatorView: View {
                         }) {
                             Text("Outer room")
                         }.buttonStyle(RoundedCornersButtonStyle())
+                        Button(action: {
+//                            self.soundOpelatorModel.sendLoudspeakerInfoMessage()
+                            self.soundOpelatorModel.sendNISessionData()
+                            self.soundOpelatorModel.excludeDuplicatePeerIDs()
+                        }) {
+                            Text("Force update")
+                        }.buttonStyle(RoundedCornersButtonStyle())
+                    }
+                    
+                    
+                    HStack{
+                        
                     }
                 }
                 
@@ -191,6 +220,7 @@ struct SoundOperatorView: View {
     
     func timerAction(){
         self.soundOpelatorModel.sendAudioInfoMessage()
+//        self.soundOpelatorModel.sendAudioLocationInfoMessage()
     }
     
     private func movePointToViewCoordinateReference(point: simd_float2)->CGPoint{

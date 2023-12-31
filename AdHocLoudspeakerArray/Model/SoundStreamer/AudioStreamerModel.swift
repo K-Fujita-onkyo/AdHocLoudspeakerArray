@@ -24,7 +24,7 @@ class AudioStreamerModel: NSObject {
     
     override init(){
         super.init()
-        if let audioURL = Bundle.main.url(forResource: "Drums", withExtension: "wav") {
+        if let audioURL = Bundle.main.url(forResource: "Test", withExtension: "wav") {
             self.audioFloatArray = self.audioToFloatArray(audioURL: audioURL)!
         }
     }
@@ -37,8 +37,12 @@ class AudioStreamerModel: NSObject {
             return nil
         }
     
-        return  AudioInfoMessage(location: self.location, buffer: audioBuffer)
+        return  AudioInfoMessage(buffer: audioBuffer)
         
+    }
+    
+    func getAudioLocationInfoMessage()->AudioLocationInfoMessage? {
+        return AudioLocationInfoMessage(selfAudio: false, location: self.location)
     }
     
     func audioToFloatArray(audioURL: URL) -> [Float]? {

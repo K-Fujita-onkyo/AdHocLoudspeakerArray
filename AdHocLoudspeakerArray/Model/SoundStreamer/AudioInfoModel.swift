@@ -19,9 +19,6 @@ class AudioInfoModel: NSObject {
     }
     
     init(resourceName: String, type: String) {
-        if let audioURL = Bundle.main.url(forResource: resourceName, withExtension: type){
-            
-        }
     }
     
     func audioToFloatArray(audioURL: URL) -> [Float]? {

@@ -16,6 +16,7 @@ struct LoudspeakerView: View {
     
     @State private var isPresented: Bool = false
     @ObservedObject var loudspeakerModel: LoudspeakerModel  = LoudspeakerModel()
+    let timer = Timer.publish(every: 0.02, on: .main, in: .common).autoconnect()
     
     var body: some View {
         
@@ -34,8 +35,17 @@ struct LoudspeakerView: View {
                     .font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
                     .bold()
                     .foregroundColor(Color.white)
+                    .onReceive(timer){_ in
+                        self.timerAction()
+                    }
                 
                 Text("P2P: " + loudspeakerModel.isConnected)
+                    .font(.title2)
+                    .foregroundColor(Color.white)
+                Text("NISession: " + loudspeakerModel.isStartNISession)
+                    .font(.title2)
+                    .foregroundColor(Color.white)
+                Text("Text: " + loudspeakerModel.testText)
                     .font(.title2)
                     .foregroundColor(Color.white)
                 
@@ -66,17 +76,34 @@ struct LoudspeakerView: View {
                     }.buttonStyle(RoundedCornersButtonStyle())
                 }
                 
+//                Text("Test: " + loudspeakerModel.testText)
+//                    .font(.title2)
+//                    .foregroundColor(Color.white)
+                
+                Text("direction: " + loudspeakerModel.testText2)
+                    .foregroundColor(Color.white)
+                    .lineLimit(nil)
+                Text("distance: " + loudspeakerModel.testText3)
+                    .foregroundColor(Color.white)
+                    .lineLimit(nil)
+                
                 Button(action: {
-                    self.loudspeakerModel.playAudio()
+                    self.loudspeakerModel.update()
                 }) {
-                    Text("Play Audio")
+                    Text("tests")
                 }.buttonStyle(RoundedCornersButtonStyle())
                 
             }
         }
     }
     
+    func timerAction(){
+        self.loudspeakerModel.spatializeSoundInRealTime()
+    }
+    
 }
+
+
 
 #Preview {
     LoudspeakerView()
